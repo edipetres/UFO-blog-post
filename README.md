@@ -8,14 +8,14 @@
 Developer teams spend too much time setting up and maintaining IT infrastructures. Instead of focusing solely on the solution of their problem, they instead spend resources on managing the tools. Using managed services like AWS you could dramatically reduce the work on the setup of your infrastructure and hand over responsibilities to self-managed services that do things right.
 
 We have to host our website in the cloud but we don’t want to spend much time setting it up. 
-We don’t want to be configuring and maintaining it, such as installing the OS, required softwares and setting up users and access rights.
+We don’t want to be configuring and maintaining the server, such as installing the OS, required softwares and setting up users and access rights.
 We have a limited budget and we don’t really have time to keep watch of a server, in case it is unstable or not living up to expectations of handling a lot of requests.
 
-The nature of managed services is that it handles the process of running software in production for a developer team. From installing the OS to running the application, handling security, requests, scaling, to handling updates, managed services take off the work from the developer and let them focus on creating value for their company instead of managing the infrastructure.
+The nature of managed services is that it handles the process of running software in production for a developer team. From installing the OS to running the application, handling security, requests, scaling and to handling updates. Managed services take off the work from the developer and let them focus on creating value for their company instead of managing the infrastructure.
 
 
 ## Security
-A great thing about AWS, is that it contains a lot of security, which means that you can be a bit more relaxed when it comes to that. You of course still have to take precautions, but with AWS, you’re able to keep an eye on everything that’s going on, and then you can adjust your security accordingly.
+A great thing about AWS, is that it contains a lot of security, which means that you can be a bit more relaxed on the security part on the users side. You of course still have to take precautions, but with AWS, you’re able to keep an eye on everything that’s going on, and then you can adjust your security accordingly.
 
 ![aws](images/security.jpg)
  
@@ -37,11 +37,11 @@ A large part of the software development life cycle is the maintenance and opera
 Self managed services take this out of your hands and provide you with a smooth development process where more developer time can be allocated to the design, development and testing of the product. Here is a few examples of the benefits you can get from using services that are managed by third parties.
 
 ### Scalability
-It is hard to estimate what the amount of resources your system will require when the workload can be different and unpredictable. Horizontal and vertical scaling should have you covered, let’s have a look at what these mean. Horizontal scaling means adding more machines to your pool of resources. Vertical scaling means you scale by adding more power (CPU, RAM, storage) to your existing servers. You can choose which fits your use case better - but you can take advantage of both in the same time too.
+It is hard to estimate what the amount of resources your system will require when the workload can be different and unpredictable. Horizontal and vertical scaling should have you covered, so let’s have a look at what these mean. Horizontal scaling means adding more machines to your pool of resources. Vertical scaling means you scale by adding more power (CPU, RAM, storage) to your existing servers. You can choose which fits your use case better - but you can take advantage of both at the same time too.
 
 ![scaling](images/scalability.png)
 
-The next time your traffic increases, you can spawn a few more servers with the same configuration. Having your configuration as code will help you programatically achieve this instead of pressing buttons on a GUI which is hard to reproduce without errors and cannot be automated.
+The next time your traffic increases, you can spawn a few more servers with the same configuration. Having your configuration as code will help you programatically achieve this instead of pressing buttons on a GUI, which is hard to reproduce without errors and cannot be automated.
 
 ### No-downtime updates
 
