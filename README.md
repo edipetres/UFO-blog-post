@@ -4,13 +4,12 @@
 
 Developer teams spend too much time setting up and maintaining IT infrastructures. Instead of focusing solely on the solution of their problem, they instead spend resources on managing the tools. Using managed services like AWS you could dramatically reduce the work on the setup of your infrastructure and hand over responsibilities to self-managed services that do things right.
 
-We have to host our website in the cloud but we don’t want to spend much time setting it up. We don’t want to be configuring and maintaining it, such as installing the OS, required softwares and setting up users and access rights. We have a limited budget and we don’t really have time to keep watch of a server, in case it is unstable or not living up to expectations of handling a lot of requests.
+We have to host our website in the cloud but we don’t want to spend much time setting it up. We don’t want to be configuring and maintaining the server, such as installing the OS, required softwares and setting up users and access rights. We have a limited budget and we don’t really have time to keep watch of a server, in case it is unstable or not living up to expectations of handling a lot of requests.
 
-The nature of managed services is that it handles the process of running software in production for a developer team. From installing the OS to running the application, handling security, requests, scaling, to handling updates, managed services take off the work from the developer and let them focus on creating value for their company instead of managing the infrastructure.
+The nature of managed services is that it handles the process of running software in production for a developer team. From installing the OS to running the application, handling security, requests, scaling and to handling updates. Managed services take off the work from the developer and let them focus on creating value for their company instead of managing the infrastructure.
 
 ## Security
-
-A great thing about AWS, is that it contains a lot of security, which means that you can be a bit more relaxed when it comes to that. You of course still have to take precautions, but with AWS, you’re able to keep an eye on everything that’s going on, and then you can adjust your security accordingly.
+A great thing about AWS, is that it contains a lot of security, which means that you can be a bit more relaxed on the security part on the user's side. You, of course, still have to take precautions but with AWS you’re able to keep an eye on everything that’s going on and then you can adjust your security accordingly.
 
 ![aws](images/security.jpg)
 
@@ -39,7 +38,7 @@ It is hard to estimate what the amount of resources your system will require whe
 
 ![scaling](images/scalability.png)
 
-The next time your traffic increases, you can spawn a few more servers with the same configuration. Having your configuration as code will help you programatically achieve this instead of pressing buttons on a GUI which is hard to reproduce without errors and cannot be automated.
+The next time your traffic increases, you can spawn a few more servers with the same configuration. Having your configuration as code will help you programatically achieve this instead of pressing buttons on a GUI, which is hard to reproduce without errors and cannot be automated.
 
 ### No-downtime updates
 
@@ -100,5 +99,3 @@ https://www.sslsupportdesk.com/wp-content/uploads/2018/01/Amazon_Web_Services.pn
 https://www.geek.com/geek-cetera/the-11-funniest-hacker-attacks-1617998/
 
 https://jokideo.com/piggy-bank-i-just-feel-so-empty/
-
-
