@@ -26,9 +26,11 @@ Lastly the actual servers of AWS. They’re guarded 24/7 by trained security gua
 
 ## Managed Services
 
-A large part of the software development life cycle is the maintenance and operations of the running systems (up to 20-30%).
+A large part of the software development life cycle is the maintenance and operations (Deploy and Maintain) of the running systems - up to 20-30%.
 
 ![aws](images/graph.png)
+[1]
+
 
 Self managed services take this out of your hands and provide you with a smooth development process where more developer time can be allocated to the design, development and testing of the product. Here is a few examples of the benefits you can get from using services that are managed by third parties.
 
@@ -90,7 +92,7 @@ https://aws.amazon.com/compliance/data-center/controls/
 
 ### Images
 
-https://cloudacademy.com/blog/become-an-aws-command-line-interface-expert-with-our-new-course/
+[1] https://cloudacademy.com/blog/become-an-aws-command-line-interface-expert-with-our-new-course/
 
 http://oliverelliott.org/article/computing/tut_bio_aws/
 
