@@ -1,103 +1,104 @@
-# Managed Services: How AWS helps you focus on your code
+Written by Emil Klausen, Plamen Getsov and Edmond Petres
 
-![aws](images/aws.png)
+# Cloud Computing: How it can help creating business value
 
-Developer teams spend too much time setting up and maintaining IT infrastructures. Instead of focusing solely on the solution of their problem, they instead spend resources on managing the tools. Using managed services like AWS you could dramatically reduce the work on the setup of your infrastructure and hand over responsibilities to self-managed services that do things right.
+Developer teams spend significant amount of time setting up and maintaining their IT systems [1]. Instead of focusing solely on the solution for their IT problems, they spend resources on managing their tools and infrastructure. Using cloud providers like AWS you could dramatically reduce the work on the setup of your infrastructure and hand over responsibilities to managed services that do things right.
 
-We have to host our website in the cloud but we don’t want to spend much time setting it up. We don’t want to be configuring and maintaining the server, such as installing the OS, required softwares and setting up users and access rights. We have a limited budget and we don’t really have time to keep watch of a server, in case it is unstable or not living up to expectations of handling a lot of requests.
+In today’s DevOps culture, developers focus not only on creating software but also handling operations. A robust infrastructure is needed to comply with the operating requirements but building one requires developer time and expertise in that field. Teams have the option to use Cloud Service Providers like AWS or Microsoft Azure who can help them deploy and manage infrastructure and software. The alternative of setting up one’s own software infrastructure allows for more customization to the company’s specific needs but can be a source of mistakes.
 
-The nature of managed services is that it handles the process of running software in production for a developer team. From installing the OS to running the application, handling security, requests, scaling and to handling updates. Managed services take off the work from the developer and let them focus on creating value for their company instead of managing the infrastructure.
-
-## Security
-A great thing about AWS, is that it contains a lot of security, which means that you can be a bit more relaxed on the security part on the user's side. You, of course, still have to take precautions but with AWS you’re able to keep an eye on everything that’s going on and then you can adjust your security accordingly.
-
-![aws](images/security.jpg)
-
-### AWS Monitoring and Logging
-
-You’re able to keep track of exactly what’s going on. This is done via the “AWS CloudTrail”, which have a visibility into the API and can see; who, what and from where calls have been made.
-It’s also possible to set a “Alert Notification” via “Amazon CloudWatch” Which will notify when certain events occur.
-AWS is also ensuring that all data is encrypted. This is done with AWS’s own service, where they manage the encrypted keys. Which has the benefit of working together with the CloudTrail, so that you can see logs of key usage.
-
-### AWS Firewall
-
-With this service you can easily configure the firewall to block out common attack patterns. It could be attacks such as cross-site scripting and SQL-injection. If more rules are needed, then it takes a very short time to add additional rules to the firewall. With the firewall you’re also able to see all the traffic in real-time visibility, which helps improving the security in a faster rate.
-Lastly the actual servers of AWS. They’re guarded 24/7 by trained security guards on a facility that enforces least privilege basis. They’re also designed to tolerate and anticipate failures while still maintaining a service level. So that if a failure occurred, then an automated process will move the traffic away from the affected area.
-
-## Managed Services
-
-A large part of the software development life cycle is the maintenance and operations (Deploy and Maintain) of the running systems - up to 20-30%.
-
-![aws](images/graph.png)
-[1]
+For developing the Hackernews Project we wanted to integrate and deploy changes multiple times a day. Users are constantly accessing our system so deploying new versions have to happen with minimal or preferably no downtime. Building our own infrastructure for this purpose would have taken a lot of resources. Read further to learn how we incorporated cloud services such as Amazon’s Elastic Beanstalk and what are the our prouds and pains.
+What is a CSP?
+A cloud service provider or CSP is a company offering Infrastructure as a Service (IaaS), Software as a Service (SaaS) or Platform as a Service (PaaS). There are a handful of companies offering cloud services. Some of the big players are Amazon Web Services, Microsoft Azure, Google Cloud Platform and IBM. It is worth mentioning Digital Ocean here, but their main focus is on servers aka droplets.
 
 
-Self managed services take this out of your hands and provide you with a smooth development process where more developer time can be allocated to the design, development and testing of the product. Here is a few examples of the benefits you can get from using services that are managed by third parties.
+[2]
+One-stop shop
+Cloud providers are in a race to cover the developers’ needs. Whether you pick Microsoft’s Azure, AWS or any other provider, you will likely find that they are offering a service you need. Such as server instances, databases, file storage, domain management, logging systems and a lot more. This allows you to focus on one platform only.
+Simplicity of the setup
+Deploying a piece of software or an infrastructure can be as easy as clicking through a few pages of setup in the GUI and voila! In a matter of minutes your development environment is ready to use. This manual setup is useful when it needs to be done a single time, but having to repeat it may be prone to errors. So what do we do?
+Programmable and Immutable
+Most CSPs provide a programmable configuration - usually through a Command Line Interface or CLI, allowing for an immutable and executable infrastructure as code. Take for example the AWS CLI. You can write a few lines of bash script to create a new Ubuntu server with a preconfigured amount of resources that is defined in your code. Each time this script is executed it will produce the exact same results and is not prone to manual errors.
+Scaling
+Whether your setup is manual or programmable, cloud services allow for configuring the environment to exactly the amount of hardware resources and software stack you project needs. Do you need more RAM, CPU power or a different version of Ubuntu? Maybe multiple instances of the same type? Cloud providers allow you to scale both vertically and horizontally in just a few clicks.
 
-### Scalability
+How to set up auto-scaling on AWS [3]
+The Bright Future of Cloud Technologies
+Businesses today make more and more use of innovative technologies. As our internet bandwidth and quality increases, so does the storage capacity and computing performances. The market is predicted to continue its growth as more companies choose to benefit from software, platform and infrastructure as a service. [4]
 
-It is hard to estimate what the amount of resources your system will require when the workload can be different and unpredictable. Horizontal and vertical scaling should have you covered, let’s have a look at what these mean. Horizontal scaling means adding more machines to your pool of resources. Vertical scaling means you scale by adding more power (CPU, RAM, storage) to your existing servers. You can choose which fits your use case better - but you can take advantage of both in the same time too.
+[5]
+The Cost of Cloud Computing
+Susan Ward, a freelance IT writer who runs a successful IT consulting company, warns about use cases where cloud computing is not the best alternative:
 
-![scaling](images/scalability.png)
+“Cloud computing is the best thing for small business since the invention of the stapler. But that doesn't mean that there are no cloud computing disadvantages and that every small business should immediately throw out all their servers and desktop software and conduct all their business operations in the cloud.”  [6]
+Possible downtime
+Cloud computing makes you dependent on an internet connection. “When it's offline, you're offline”. Your business may suffer from a slow internet connection and from frequent outages.
 
-The next time your traffic increases, you can spawn a few more servers with the same configuration. Having your configuration as code will help you programatically achieve this instead of pressing buttons on a GUI, which is hard to reproduce without errors and cannot be automated.
+Your provider will guarantee a certain uptime of the services, usually above 99% in the Service-level Agreement (SLA). But mistakes can and will happen even to the best.
 
-### No-downtime updates
+On Prime Day in 2018 Amazon suffered an outage that affected their website and warehouse operations for hours. [7]
 
-For example, using Elastic Beanstalk with a Continuous Integration pipeline (e.g. CircleCI), after pushing your code to the VCS (Version Control System like Github or BitBucket), your code is built and deployed automatically without any downtime for the end user. But how is this achieved? When deploying a new version of your system, a new server instance is spawned and while the installation is in progress, all the requests to your website go to the previous running instance. Once the new version is ready to serve users, traffic from the previous server is rerouted to the new one and therefore causing no downtime.
+In 2017 the majority of the internet was grounded when Amazon’s S3 service crashed taking down businesses relying on that service. [8]
+Security Issues
+Your data is in the cloud and that means you have to place your trust in your provider for secure handling and protection of the data.
+Cost
+Performance-intensive applications such as video editing are not suitable for cloud computing and can wind up with very high running costs. Also, a sudden spike in your traffic can unexpectedly raise your bills if you did not set the limits right in you scaling configuration.
+Inflexibility
+Be careful when choosing a vendor to make sure you don’t become a “forever” customer. Transferring your applications to other providers is not an easy process, and some will deliberately try to lock you in.
+Learning curve
+Being such a large platform, one will spend quite a bit of time learning how to use their services. While this will have an initial learning cost, it is probably not higher than having to learn how to set up our own infrastructure in such a robust way that these specialized companies have done it for us.
+Customization
+While most of the services usually work out of the box, we can run into difficulties trying to customize them. For example, when using a self-managed deployment platform like Elastic Beanstalk, you can only add software to the OS from supported repositories. This meant we could not install Prometheus to log the network requests as it was not available in such a repo.
+Alternative - Own hardware
+Having your own hardware in house is more secure in the sense that you don’t have to trust a third party with your sensitive information, such as sensitive user data. Having a physical server also means you don’t need internet access for accessing the data.
+Also you control exactly how you want to setup the server, so that it can be specifically tailored towards your exact needs. 
+Cost
+However it’s quite expensive. Not only in the sense that you need to buy a physical server, but you also need to buy software, electricity, maintain it and update it with other physical hardware to improve the performance or capacity of it. In addition to that you also need to store it a safe place, to ensure that the physical hardware will take no damage from water, dust, heat etc. 
+There are of course different ways of working with a physical server, you could go for bare minimum and get something that just works for a small website and not having to spend too much money and space, or scale it up, but then having to take all of the security of both physical and software into account.
+Upgrading hardware
+A good thing about a physical server is that you decide what you want to install on it, and can therefore go for cheaper solutions than compared to what other services may provide. It can for example be with memory or storage, here you could buy a cheaper product that offers the same as a more expensive version, and thereby reduce the cost.
+However it’s suggested that every third year you completely replace your server. In the chart below it’s shown how the cost of an older server will quickly increase after third year, in both weaker performance, but also with more time needed for support.
 
-### Reliability
 
-These services were written by developers who are specialists in the technology. So whether it comes to scaling instances or firewall protection, we are better off relying on experts than reinventing the wheel every time when that itself does not always provide business value.
+A big downside to having only 1 server and needing to upgrade hardware, then you will have to shut it down, and thereby having downtime.
+The Chosen Toolstack
+We settled with AWS as it is the biggest vendor out there with a large community, good learning resources and we had the most experience in the team with this cloud provider.
+Elastic Beanstalk
+The service that brought the most value for our project was arguably Elastic Beanstalk. Let’s dive under the surface to learn how it helped our Hackernews project achieve the requirements of our operations team.
+Zero-downtime Updates
+Using Elastic Beanstalk (EB for short) with a Continuous Integration pipeline - in our case CircleCI - when pushing some new code to the VCS (Version Control System like Github or BitBucket), the system is built and deployed automatically without any downtime for the end user. 
 
-In our projects, we are satisfied with the integrity AWS helped us achieve. Elastic Beanstalk makes sure that the server is always running and when it goes down it is restarted immediately. Alerts are set up for notifying developers about downtime, logs are recorded for debugging and network is monitored to analyze the uptime of our systems.
+But how is this achieved? When deploying a new version of your system, a new server instance is spawned and while the installation is in progress, all the requests to the website are routed to the previous running instance. Once the new version is ready to serve users, the load balancer reroutes traffic from the previous server to the new one and therefore causing no downtime. 
 
-## Pay per use
+With a proper configuration in place (read more here - link eb how-to) the pipeline triggers a deployment attempt on Elastic Beanstalk with one line of code: eb deploy
 
-It is important mentioning that AWS is a great place for students to get started. They have a free tier which covers your expenses for most hobby uses or small projects. It is also easy to get a $100 voucher with a student email address.
+What happens, however, if the server crashes? EB takes care of that automatically. A non-zero exit code that shuts down the server completely will automatically trigger a restart of this server. This has worked well for us and made sure our downtime was just a matter of seconds when a crash occurred.
+Take-aways
+This is a robust setup as it guarantees that our service (the API) is responding before publishing an updated version. In case anything goes wrong an alert will go off and the new (broken) version will not sabotage the running system. 
 
-![](images/piggy-bank.jpg)
+We have also saved a lot of time on configuring these servers where the app is deployed. By using the EB service, most if not all of the deployment steps are taken care of. It handles server creation, security, app deployment, zero-time updates, logging, alerts, statistics and many more.
+Conclusion
+Overall, we are satisfied with choosing Amazon Web Services for hosting our static website and API. However, there are a number of considerations before we select a cloud computing platform instead of setting up our own hardware. Most CSPs will offer services under different names that achieve the same if not similar results. Prices can vouch for one vendor over the other, but personal preference and experience can influence the decision. We should expect that one day we might need to transfer our system to another vendor and no become too dependent on any of them. 
 
-The services of AWS are priced on a pay per use plan. This means you will only pay for what you actually use. So when your traffic increases to your website your bills will increase as well, but when traffic is low, you will not pay extra for what you don’t need. You need to be careful though, because when you release the next big thing and it goes viral you hope it is profitable enough to pay for the running costs of the server. It is, of course, possible to set limits and alerts on your usage.
+Taking the above things into consideration, when we chose a cloud service provider like AWS it is likely going to boost our team’s performance and take some responsibility off of our shoulders by managing the infrastructure for us. For a small website like ours that needs to scale with the users, has only a number of developers and needs to be secure and debuggable it makes sense to rely on cloud computing services.
 
-### Pro Tip: use this for your advantage!
+After all, most new companies are not going to build an office for the employees to work in. They will instead rent out the amount of space they need from someone who is specialized in building offices.
 
-> Imagine you have an API that serves data about 1000 times a day. Let’s say a request takes 1 second to perform. That is 16 minutes of running business logic per day, but your server is running 24 hours a day to listen to these requests. That is a 99,98% time your resources are doing nothing. Now let’s replace your API with serverless Lambda calls. These calls are executed on a running server, but you only pay for that 1 second your code is being executed. This will reduce your running costs by a fold of 5000 in our simple example.
 
-## Managed Services and Automation
 
-One of the drawbacks of configuring your environment manually in a GUI is that it cannot be programmatically repeated. Somebody else has to come in, remember each step and spend the time redoing it without forgetting any of the steps. Sounds error prone, right?
 
-One criticism of AWS is that we end up configuring too many things with fancy buttons and list views. However, using the AWS command line tool, most of these tasks can be coded and executed programmatically too. It will take some extra time figuring out their complex CLI, but that will pay off since this step does not need to be repeated again.
+References
+As described in the Software Development Life Cycle section - https://www.owasp.org/index.php/Testing_Guide_Introduction
+https://searchitchannel.techtarget.com/definition/cloud-service-provider-cloud-provider
+https://docs.aws.amazon.com/autoscaling/ec2/userguide/GettingStartedTutorial.html
+https://www.techfunnel.com/information-technology/5-future-trends-in-cloud-computing/
+https://www.statista.com/statistics/500541/worldwide-hosting-and-cloud-computing-market/
+https://www.thebalancesmb.com/disadvantages-of-cloud-computing-4067218
+https://nordic.businessinsider.com/amazon-prime-day-outage-caused-by-moving-off-oracles-databases-2018-10?r=US&IR=T
+https://www.theverge.com/2017/3/2/14792442/amazon-s3-outage-cause-typo-internet-server
 
-![gui](images/gui-cli.png)
+https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/clearbox-flow-00.png
+https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/Welcome.html
+https://blog.juriba.com/the-hidden-costs-of-an-aging-it-infrastructure
 
-## Conclusion
 
-Managed services help developers focus their attention on creating business value for their companies and take off the responsibility of managing, configuring and maintaining the server infrastructure. Multiple tools are available to achieve high-grade security, scalability, updates and much of the software development process.
 
-The price paid for managed services is often times miniscule to the benefits gained in productivity.
-
-Having hosted our website on AWS has been a great experience. In our projects it allowed us to spend the time on creating the website and the corresponding sub-systems, while also teaching us about aspects of website hosting like scaling, security, managed services in general etc. from an all-in-one cloud service provider.
-
-## References
-
-http://www.tothenew.com/blog/top-10-benefits-of-using-aws/
-
-https://aws.amazon.com/security/
-
-https://aws.amazon.com/waf/
-
-https://aws.amazon.com/compliance/data-center/controls/
-
-### Images
-
-[1] https://cloudacademy.com/blog/become-an-aws-command-line-interface-expert-with-our-new-course/
-
-http://oliverelliott.org/article/computing/tut_bio_aws/
-
-https://www.sslsupportdesk.com/wp-content/uploads/2018/01/Amazon_Web_Services.png
-
-https://www.geek.com/geek-cetera/the-11-funniest-hacker-attacks-1617998/
-
-https://jokideo.com/piggy-bank-i-just-feel-so-empty/
